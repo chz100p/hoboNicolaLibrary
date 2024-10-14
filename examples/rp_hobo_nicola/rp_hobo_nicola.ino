@@ -19,10 +19,10 @@
 		(Pico-pio-usb 0.6.0, Arduino-pico 3.9.3, Adafruit Tinyusb 3.2.0) 
 */
 
-#include "Adafruit_USBH_Host.h"
+#include "pio_usb.h"
+#include "Adafruit_TinyUSB.h"
 #include "hobo_nicola.h"
 #include "hobo_board_config.h"
-#include "pio_usb.h"
 
 static const uint8_t usbh_dp_gpio = 2;
 Adafruit_USBH_Host USBHost;

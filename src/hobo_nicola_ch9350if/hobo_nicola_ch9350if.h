@@ -18,7 +18,7 @@
  * along with "Hobo-nicola keyboard and adapter".  If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include "arduino.h"
+#include "Arduino.h"
 
 #ifndef __HOBO_CH9350L_H__
 #define __HOBO_CH9350L_H__

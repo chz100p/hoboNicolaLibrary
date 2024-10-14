@@ -27,7 +27,13 @@
 
 #include <stdint.h>
 #include <Arduino.h>
-#include "PluggableUSB.h"
+#if __has_include("USB/PluggableUSB.h")
+    #include "USB/PluggableUSB.h"
+#elif __has_include("api/PluggableUSB.h")
+    #include "api/PluggableUSB.h"
+#else
+    #include "PluggableUSB.h"
+#endif
 
 
 #if defined(USBCON)

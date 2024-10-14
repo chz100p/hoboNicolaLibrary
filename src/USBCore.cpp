@@ -25,8 +25,20 @@
 */
 #if !defined(USE_TINYUSB)
 
-#include "USBAPI.h"
-#include "PluggableUSB.h"
+#if __has_include("USB/USBAPI.h")
+    #include "USB/USBAPI.h"
+#elif __has_include("api/USBAPI.h")
+    #include "api/USBAPI.h"
+#else
+    #include "USBAPI.h"
+#endif
+#if __has_include("USB/PluggableUSB.h")
+    #include "USB/PluggableUSB.h"
+#elif __has_include("api/PluggableUSB.h")
+    #include "api/PluggableUSB.h"
+#else
+    #include "PluggableUSB.h"
+#endif
 #include <stdlib.h>
 
 #if defined(USBCON)

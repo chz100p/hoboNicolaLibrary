@@ -21,7 +21,13 @@
 #if !defined(USE_TINYUSB)
 
 
-#include "USBAPI.h"
+#if __has_include("USB/USBAPI.h")
+    #include "USB/USBAPI.h"
+#elif __has_include("api/USBAPI.h")
+    #include "api/USBAPI.h"
+#else
+    #include "USBAPI.h"
+#endif
 
 //	Standard requests
 #define GET_STATUS			0
